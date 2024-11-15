@@ -1,0 +1,56 @@
+﻿<Window x:Class="PaintApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:PaintApp"
+        mc:Ignorable="d"
+        Title="PaintApp" Height="950" Width="1400">
+
+    <Canvas Height="933" Width="1400">
+
+        <!-- Hover Turn off -->
+
+
+        <!-- Drawing Area -->
+        <InkCanvas Name="drawingArea1" Height="715" Width="960" Canvas.Top="94" Canvas.Left="80" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Rectangle Name="whiteBackground" Height="715" Width="960" InkCanvas.Left="0" InkCanvas.Top="0" Fill="White" Stroke="Black"/>
+        </InkCanvas>
+        <Rectangle Height="715" StrokeThickness="5" Canvas.Left="80" Stroke="Black"  Canvas.Top="94" Width="960" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <!-- Color Box -->
+        <Rectangle Height="715" StrokeThickness="5" Canvas.Left="1110" Stroke="Black" Canvas.Top="94" Width="160" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Rectangle Height="110" StrokeThickness="2" Canvas.Left="1120" Stroke="Black" Canvas.Top="124" Width="140" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button  Name="red" BorderThickness="0" Background="Red" Canvas.Left="1140" Canvas.Top="144" HorizontalAlignment="Left" VerticalAlignment="Center" Width="20" Height="20" Click="red_Click"/>
+        <Button  x:Name="blue" BorderThickness="0" Background="Blue" Canvas.Left="1180" Canvas.Top="144" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Click="blue_Click"/>
+        <Button  x:Name="Green" BorderThickness="0" Background="DarkGreen" Canvas.Left="1220" Canvas.Top="144" Width="20" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.976" Click="Green_Click"/>
+        <Label Content="Colors" Canvas.Left="1120" Canvas.Top="103"/>
+
+        <!-- Size Slider -->
+        <Slider Name="sizeSlider" Value="10" Minimum="0" Maximum="50" Canvas.Left="160" Canvas.Top="44" Width="120" ValueChanged="sizeSlider_ValueChanged"/>
+        <Label Name="sizeLabel" Content="10" Canvas.Left="132" Canvas.Top="40" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <!-- Color Picker -->
+        <Label Content="Color Picker" FontSize="10" Canvas.Left="1130" Canvas.Top="170" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <xctk:ColorPicker Name="colorPicker" SelectedColorChanged="colorPicker_SelectedColorChanged"  Width="120" Canvas.Left="1130" Canvas.Top="193"></xctk:ColorPicker>
+
+        <!-- Pen and Eraser -->
+        <Button x:Name="PenButton" Click="PenButton_Click" Canvas.Left="300" Canvas.Top="43" HorizontalAlignment="Center" BorderThickness="0" VerticalAlignment="Top" Width="20" Height="20">
+            <Image Source="pack://application:,,,/PaintApp;component/paintAppIcons/pen.png" />
+        </Button>
+
+        <Button x:Name="EraserButton" Canvas.Left="340" Canvas.Top="43" HorizontalAlignment="Center" VerticalAlignment="Top" Width="20" Height="20" Click="EraserButton_Click">
+            <Image Source="pack://application:,,,/PaintApp;component/paintAppIcons/eraser.png" />
+        </Button>
+
+        <Button Canvas.Left="340" Canvas.Top="23" HorizontalAlignment="Center" VerticalAlignment="Top" Width="20" Height="20" BorderThickness="0" Click="Button_Click">
+            <Image Source="pack://application:,,,/PaintApp;component/paintAppIcons/change.png" />
+        </Button>
+
+
+        <!-- Saving and Other functions -->
+        <Button Content="Save" Canvas.Left="1000" Canvas.Top="44" Click="Button_Click_1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="40"/>
+        <Button x:Name="addWhiteBackground" Content="Add White Background" Canvas.Left="753" Canvas.Top="43" HorizontalAlignment="Left" VerticalAlignment="Top" Click="addWhiteBackground_Click"/>
+    </Canvas>
+</Window>

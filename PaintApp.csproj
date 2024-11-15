@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFrameworks>net8.0-windows</TargetFrameworks>
+		<LangVersion>9.0</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+		<Nullable>enable</Nullable>
+	    <ImplicitUsings>disable</ImplicitUsings>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+	  <None Remove="paintAppIcons\change.png" />
+	  <None Remove="paintAppIcons\eraser.png" />
+	  <None Remove="paintAppIcons\pen.png" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.1" />
+    <PackageReference Include="Haley.WPF" Version="5.4.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="paintAppIcons\change.png" />
+    <Resource Include="paintAppIcons\eraser.png" />
+    <Resource Include="paintAppIcons\pen.png" />
+  </ItemGroup>
+</Project>
